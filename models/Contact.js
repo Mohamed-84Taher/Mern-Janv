@@ -13,5 +13,6 @@ const contactSchema = new schema({
     toLowerCase: true,
   },
   age: Number,
+  gender: String,
 });
 module.exports = mongoose.model("Contact", contactSchema);

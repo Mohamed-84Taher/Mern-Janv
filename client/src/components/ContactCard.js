@@ -1,5 +1,5 @@
-import React from "react";
-import { Card, ListGroup, Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Card, ListGroup, Button, Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
@@ -31,6 +31,24 @@ function ContactCard({ contact }) {
         <ListGroup.Item>Name :{contact.name}</ListGroup.Item>
         <ListGroup.Item>Email :{contact.email}</ListGroup.Item>
         <ListGroup.Item>Age :{contact.age}</ListGroup.Item>
+        <ListGroup.Item>
+          <Form>
+            <Form.Check
+              inline
+              label='male'
+              name='group1'
+              type='radio'
+              checked={contact.gender === "male"}
+            />
+            <Form.Check
+              inline
+              label='female'
+              name='group1'
+              type='radio'
+              checked={contact.gender === "female"}
+            />
+          </Form>
+        </ListGroup.Item>
       </ListGroup>
       <Card.Body style={{ display: "flex", justifyContent: "space-evenly" }}>
         <Button variant='danger' onClick={handleDelete}>
